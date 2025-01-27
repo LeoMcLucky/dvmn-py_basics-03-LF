@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-login = os.getenv('login')
-password = os.getenv('password')
+login = os.getenv('LOGIN_MAIL')
+password = os.getenv('PASSWORD_MAIL')
 
-letter_text = ("""Привет, %friend_name%! %my_name% приглашает тебя на сайт %website%!
+letter_text = """Привет, %friend_name%! %my_name% приглашает тебя на сайт %website%!
 
 %website% — это новая версия онлайн-курса по программированию. 
 Изучаем Python и не только. Решаем задачи. Получаем ревью от преподавателя. 
@@ -22,7 +22,7 @@ letter_text = ("""Привет, %friend_name%! %my_name% приглашает т
 Все проекты — они же решение наших задачек — можно разместить на твоём GitHub. Работодатели такое оценят. 
 
 Регистрируйся → %website%  
-На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл.""")
+На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл."""
 
 friend_name = 'Антон'
 web_site = 'https://dvmn.org/profession-ref-program/leon.fissenko/Lw7mi/'
@@ -42,8 +42,8 @@ To: {Адрес_получателя}
 Subject: {Заголовок_письма}
 Content-Type: text/plain; charset="UTF-8";
 
-{Текст}""".format(Адрес_отправителя=sender_mail, Адрес_получателя=recipient_mail,\
-Заголовок_письма=email_subject, Текст=personal_letter)
+{Текст}""".format(Адрес_отправителя = sender_mail, Адрес_получателя = recipient_mail,\
+Заголовок_письма = email_subject, Текст = personal_letter)
 
 letter = letter.encode("UTF-8")
 
